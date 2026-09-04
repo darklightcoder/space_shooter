@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cdskjsybd62qd"]
+
+[ext_resource type="Script" uid="uid://3x3apmcd0io4" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://cnraxrlao3tkq" path="res://assets/PNG/Enemies/enemyGreen1.png" id="2_afpow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ygxs"]
+radius = 25.179358
+
+[node name="Enemy" type="Area2D" unique_id=1120104098]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_1f0kj")
+hp = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1644974712]
+position = Vector2(3.0000076, -1)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_afpow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696991914]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_6ygxs")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2125594785]
+position = Vector2(1, -59)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

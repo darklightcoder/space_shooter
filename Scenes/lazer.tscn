@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btpmy2yt2keht"]
+
+[ext_resource type="Script" uid="uid://384g31xoi2v2" path="res://Scripts/lazer.gd" id="1_kxm2h"]
+[ext_resource type="Texture2D" uid="uid://dqxbsipvid1ft" path="res://assets/PNG/Lasers/laserRed01.png" id="2_55sbj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ygxs"]
+radius = 2.0
+height = 44.0
+
+[node name="Lazer" type="Area2D" unique_id=1732835327]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_kxm2h")
+speed = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1019438301]
+position = Vector2(0.99999994, 1.9999999)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_55sbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1512793389]
+position = Vector2(1, 3)
+shape = SubResource("CapsuleShape2D_6ygxs")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1091206929]
+position = Vector2(8, 38)
+rect = Rect2(-10, -10, 5, 4)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

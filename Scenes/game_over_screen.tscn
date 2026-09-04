@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cgh7yrx28dx1f"]
+
+[ext_resource type="Script" uid="uid://d22eykc1pghv6" path="res://Scripts/game_over_screen.gd" id="1_0gua7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx3dx"]
+bg_color = Color(0.26666668, 0.6, 0.6, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="GameOverScreen" type="Control" unique_id=1455321220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0gua7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1818124937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38039216)
+
+[node name="Panel" type="Panel" parent="." unique_id=1618404385]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -178.0
+offset_right = 208.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bx3dx")
+
+[node name="GameOver" type="Label" parent="Panel" unique_id=1272509383]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 44
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Panel" unique_id=516892609]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 101.0
+offset_right = 386.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 33
+text = "Score: 9999"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="Panel" unique_id=265298506]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.555
+anchor_right = 0.517
+anchor_bottom = 0.555
+offset_left = -96.97
+offset_top = -42.354996
+offset_right = 97.03
+offset_bottom = 42.645004
+theme_override_font_sizes/font_size = 44
+text = "Retry"
+
+[node name="HiScore" type="Label" parent="Panel" unique_id=254312235]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 60.0
+offset_right = 407.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 30
+text = "High Score : 9999"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]

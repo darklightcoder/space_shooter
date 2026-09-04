@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b66180aojk3w8"]
+
+[ext_resource type="Script" uid="uid://y2aotmvfrfdm" path="res://Scripts/hud.gd" id="1_e0onf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vivr"]
+font_size = 45
+
+[node name="Hud" type="Control" unique_id=392078201]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e0onf")
+
+[node name="Score" type="Label" parent="." unique_id=2104020930]
+layout_mode = 0
+offset_right = 541.0
+offset_bottom = 61.0
+text = "SCORE : 99999"
+label_settings = SubResource("LabelSettings_1vivr")
+horizontal_alignment = 1

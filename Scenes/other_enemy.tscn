@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://mu4m6dmcrkl1"]
+
+[ext_resource type="PackedScene" uid="uid://cdskjsybd62qd" path="res://Scenes/enemy.tscn" id="1_1pdqk"]
+[ext_resource type="Texture2D" uid="uid://d0ecty7y7dj35" path="res://assets/PNG/Enemies/enemyRed5.png" id="2_f6t75"]
+
+[node name="OtherEnemy" unique_id=1120104098 instance=ExtResource("1_1pdqk")]
+speed = 350.0
+hp = 1
+points = 200
+
+[node name="Sprite2D" parent="." index="0" unique_id=1644974712]
+position = Vector2(1.0000002, 0)
+texture = ExtResource("2_f6t75")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=696991914]
+position = Vector2(1, 2)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=2125594785]
+position = Vector2(1, -55)
