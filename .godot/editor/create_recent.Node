@@ -1,0 +1,14 @@
+GPUParticles2D
+AudioStreamPlayer2D
+Node
+CPUParticles2D
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+Label
+Button
+Panel
+ColorRect
+Control
+CanvasLayer
+Timer
